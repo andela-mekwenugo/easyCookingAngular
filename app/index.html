@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+  <html ng-app="recipeApp">
+    <head>
+      <title>Recipe App</title>
+      <meta charset= "utf-8">
+      <meta name= "viewport" content= "width= device-width, initial-scale= 1.0">
+      <link rel="stylesheet" type="text/css" href="css/vendor/bootstrap.css">
+      <link rel="stylesheet" type="text/css" href="css/vendor/reset.css">
+      <link rel="stylesheet" type="text/css" href="css/custom/main.css">
+      <script src="js/vendor/angular.js"></script>
+      <script src="js/vendor/jquery-2.1.1.js"></script>
+      
+      
+    </head>
+    <body ng-controller="recipeController">
+      <div class="container-fluid">
+        <div id="logo">
+          <img src="img/logo.jpg">
+        </div>
+        <h1><em>WELCOME TO EASY COOKING</em></h1>
+        <p><marquee scrollamount="6" font-size:15;>Search and learn how to cook delicious meals using easy recipes.</marquee></p>
+
+        <form ng-submit="searchRecipe(recipe)">
+          <input type="text" ng-model="recipe" required id="textArea" placeholder="Enter recipe name" pattern="[A-Za-z]">
+          <input type="submit" value="Search" id="searchButton">        
+        </form>
+        <!-- <p id="validateResult" ng-model="validateResult">NOT AVAILABLE</p> -->
+
+        <div class= "loadArea">
+          <div ng-bind="data"></div>
+        </div>
+        <div class="wrapper">
+          <div class="container">
+            <div id="four-columns" class="grid-container">
+              <ul class="rig columns-4">
+                <li ng-repeat="recipe in recipes" class="foodList">
+                  <a href="recipe.WebURL"><img src="{{recipe.ImageURL}}"></a>
+                  <p>NAME: {{recipe.Title}}</p>
+                  <p>CUISINE: {{recipe.Cuisine}}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+    <script src="js/custom/app.js"></script>
+    <script src="js/custom/controller.js"></script>
+    </body>
+  </html>
