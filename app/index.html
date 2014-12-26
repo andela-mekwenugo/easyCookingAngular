@@ -15,14 +15,16 @@
     <body ng-controller="recipeController">
       <div class="container-fluid">
         <div id="logo">
-          <img src="img/logo.jpg">
+          <img src="img/logo.jpg" class="img-circle" alt="Cinque Terre" width="304" height="236">
         </div>
         <h1><em>WELCOME TO EASY COOKING</em></h1>
         <p><marquee scrollamount="6" font-size:15;>Search and learn how to cook delicious meals using easy recipes.</marquee></p>
         <p class="error"></p>
-        <form ng-submit="searchRecipe(recipe)">
-          <input type="text" ng-model="recipe" required id="textArea" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');" placeholder="Enter recipe name">
-          <input type="submit" value="Search" id="searchButton">        
+        <form ng-submit="searchRecipe(recipe)" role="form" class="form-inline">
+          <div class="form-group">
+            <input type="text" ng-model="recipe" required id="textArea" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');" placeholder="Enter recipe name" class="form-control">
+            <input type="submit" value="Search" id="searchButton" class="btn btn-info btn-lg">
+          </div>     
         </form>
 
         <div class= "loadArea">
