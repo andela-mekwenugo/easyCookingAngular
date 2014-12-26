@@ -19,14 +19,14 @@
         </div>
         <h1><em>WELCOME TO EASY COOKING</em></h1>
         <p><marquee scrollamount="6" font-size:15;>Search and learn how to cook delicious meals using easy recipes.</marquee></p>
-
+        <p class="error"></p>
         <form ng-submit="searchRecipe(recipe)">
           <input type="text" ng-model="recipe" required id="textArea" onkeyup="this.value=this.value.replace(/[^a-z]/g,'');" placeholder="Enter recipe name">
           <input type="submit" value="Search" id="searchButton">        
         </form>
 
         <div class= "loadArea">
-          <div ng-bind="data"></div>
+          <div ng-bind="data" class="data"></div>
         </div>
         <div class="wrapper">
           <div class="container">
