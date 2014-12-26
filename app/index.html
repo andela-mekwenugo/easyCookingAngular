@@ -35,7 +35,7 @@
             <div id="four-columns" class="grid-container">
               <ul class="rig columns-4">
                 <li ng-repeat="recipe in recipes" class="foodList">
-                  <a href="recipe.WebURL"><img src="{{recipe.ImageURL}}"></a>
+                  <a href="{{recipe.WebURL}}"><img src="{{recipe.ImageURL}}"></a>
                   <p>NAME: {{recipe.Title}}</p>
                   <p>CUISINE: {{recipe.Cuisine}}</p>
                 </li>
